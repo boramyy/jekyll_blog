@@ -1,0 +1,24 @@
+- name: javascript
+  degree: 75
+  class: js
+  color: ffcc66
+
+- name: html/css
+  degree: 80
+  class: html
+  color: ff5a00
+
+- name: react
+  degree: 50
+  class: react
+  color: 61dafb
+
+- name: vue
+  degree: 35
+  class: vue
+  color: 4fc08d
+
+- name: hoho
+  degree: 70
+  class: vue
+  color: 4fc08d

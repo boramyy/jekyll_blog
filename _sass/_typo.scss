@@ -1,0 +1,103 @@
+::-moz-selection {
+   background: #ff6db6;
+   color: #fff;
+}
+::selection {
+   background: #ff6db6;
+   color: #fff;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: 'Noto Sans KR', san-serif;
+}
+
+code {
+  font-family: 'Roboto Mono';
+  font-size: 0.85em;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color:#333;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+h2:before {
+  // content: '';
+  // display: block;
+  // width: 60px;
+  // background: #e696ff;
+  // height: 20px;
+  // margin: 0 0 -15px -15px;
+      //  content: '';
+      // display: block;
+      // width: 495px;
+      // background: #e696ff;
+      // height: 14px;
+      // margin: 0px 0 -35px 35px;
+}
+
+h3 {font-size:1.4em}
+
+// .post-tag {
+//   color:#111; background:#f3f3f3;
+//   &.javascript {color:#000;background:#fae000}
+//   &.vue {color:#fff;background:#4fc08d}
+//   &.react {color:#61dafb;background:#282c34}
+//   &.github {color:#7f8c8d;background:#f6f6f6}
+// }
+
+.post {
+  font-size: 18px;
+  line-height: 1.8;
+
+  .post-header {
+    .post-meta {
+      color: #999;
+    }
+  }
+  p {
+    word-spacing: 1px;
+    // code {
+    //   margin: 0 5px;
+    //   padding: 1px 6px;
+    //   color: #000;
+    //   // border-radius: 4px;
+    //   background: #f5f5f5;
+    // }
+
+    code {
+      margin: 0 5px;
+      padding: 1px 6px;
+      color: #000;
+      display: inline-block;
+      height: 28px;
+      padding-left: 0;
+      vertical-align: text-bottom;
+      border-bottom: 12px solid #f7e0ff;
+      // border-bottom: 12px solid #f7e0ff;
+    }
+
+  }
+}

@@ -1,0 +1,168 @@
+---
+layout: default
+---
+<div class="background"></div>
+<div class="home">
+  <!-- <article class="main-group"> -->
+    <!-- <ul class="post-list">
+      {% for post in site.posts %}
+      <li class="post-list-item">
+        <a href="{{ post.golink | default: post.url }}">
+          <span class="post-title">{{ post.title }}</span>
+          <span class="post-date">{{ post.date | date: "%B %d, %Y"}}</span>
+          <div class="post-desc">
+            <div class="post-excerpt">{{ post.excerpt }}</div>
+            {% for tag in post.tags %}
+            <span class="post-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul> -->
+  <!-- </article> -->
+  <article class="main-group">
+    <img id="hello" src="/assets/img/hello.png">
+  </article>
+  <article class="main-group dev">
+    <div class="group-title">
+      <span class="front">development</span>
+      <span class="back">01</span>
+    </div>
+    <div class="group-content">
+
+      <!-- <ul class="post-list">
+        {% for post in site.tags.[tag.name] %}
+          {% if forloop.index0 == 6 %}
+        {% break %}
+        {% endif %}
+        <li class="post-list-item">
+          <a href="{{ post.url }}">
+            <span class="post-title">{{ post.title }}</span>
+            <span class="post-date">{{ post.date | date: "%B %d, %Y"}}</span>
+            <div class="post-desc">
+              <div class="post-excerpt">{{ post.excerpt }}</div>
+              {% for tag in post.tags %}
+              <span class="post-tag {{ tag }}">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul> -->
+
+      <div id="frame">
+        <button id="back">뒤로</button>
+        <div class="folder-list">
+          {% for tag in site.data.tags %}
+          <!-- <a href="#tag-{{ tag.name }}" id="tag-{{ tag.name }}" class="folder"><span class="folder-title">{{ tag.name }}</span></a> -->
+          <div class="folder-group">
+            <div class="folder">
+              <input type="radio" id="tag-{{ tag.name }}" name="tag" value="{{ tag.name }}">
+              <label class="folder-title" for="tag-{{ tag.name }}">{{ tag.name }}({{ site.tags[tag.name].size }})</label>
+            </div>
+            <ul class="post-list">
+              {% for post in site.tags.[tag.name] %}
+                {% if forloop.index0 == 6 %}
+                  {% break %}
+                {% endif %}
+                <li class="post-list-item">
+                  <a href="{{ post.url }}">
+                    <span class="post-title">{{ post.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+  <article class="main-group pht">
+    <div class="group-title">
+      <span class="front">photograph</span>
+      <span class="back">02</span>
+    </div>
+    <div class="group-content">
+      <ul class="post-list">
+        {% for post in site.categories.photograph %}
+          {% if forloop.index0 == 5 %}
+            {% break %}
+          {% endif %}
+          <li class="post-list-item">
+            <a href="{{ post.url }}">
+              <img src="/assets/img/{{ post.img }}">
+              <div class="post-tags">
+                {% for tag in post.tags %}
+                <span class="post-tag {{ tag }}">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+  <article class="main-group">
+    <div class="group-title">
+      <span class="front">project</span>
+      <span class="back">03</span>
+    </div>
+    <div class="group-content"></div>
+  </article>
+  <article class="main-group skills">
+    <div class="group-title">
+      <span class="front">skills</span>
+      <span class="back">04</span>
+    </div>
+    <div class="group-content group-skill">
+      {% for skill in site.data.skills %}
+        <div class="skill {{ skill.class }}">
+          <span class="skill-degree" color="{{ skill.color }}">{{ skill.degree }}</span>
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="arrow arrow-right"></div>
+    <div class="arrow arrow-left"></div>
+  </article>
+  <article class="main-group">
+    <span class="group-title">bibia<br>be ye ye</span>
+  </article>
+</div>
+
+<script>
+  const frame = document.getElementById('frame');
+  const back = document.getElementById('back');
+  
+  const folder = document.querySelector('.folder-list');
+  folder.addEventListener('dblclick', function(e) {
+    const target = e.target.parentElement.parentElement;
+    if (target.classList.contains('folder-group')) {
+      target.classList.toggle('open');
+      changePage(frame);
+    }
+  });
+
+  back.addEventListener('click', function(e) {
+    changePage(frame);
+  });
+
+  const changePage = function(item) {
+    item.classList.toggle('open');
+  }
+
+  const degrees = document.querySelectorAll('.skill-degree');
+  const styleSheet = document.styleSheets[1];
+  console.log(degrees);
+  degrees.forEach(function(item, index) {
+    console.log('hoho1 : ', styleSheet.rules.length);
+    styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ' .skill-degree:after {width: calc(' + item.innerHTML + '% - 18%);}', styleSheet.rules.length);
+    console.log('hoho2 : ', styleSheet.rules.length, item.getAttribute('color'));
+    styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ':hover .skill-degree:after {box-shadow:10px 10px 0 3px #' + item.getAttribute('color') + '!important;}', styleSheet.rules.length);
+  })
+
+</script>
