@@ -26,12 +26,28 @@ layout: default
   </article>
   <article class="main-group dev">
     <div class="group-title">
-      <span class="front">development</span>
-      <span class="back">01</span>
+      01<br/>
+      development
     </div>
     <div class="group-content">
-
-      <!-- <ul class="post-list">
+      <ul class="post-list">
+        {% for post in site.categories.development %}
+        {% if forloop.index0 == 5 %}
+        {% break %}
+        {% endif %}
+        <li class="post-list-item">
+          <a href="{{ post.url }}">
+            <span class="post-title">{{ post.title }}</span>
+            <div class="post-tags">
+              {% for tag in post.tags %}
+              <span class="post-tag {{ tag }}">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="post-list">
         {% for post in site.tags.[tag.name] %}
           {% if forloop.index0 == 6 %}
         {% break %}
@@ -49,42 +65,13 @@ layout: default
           </a>
         </li>
         {% endfor %}
-      </ul> -->
-
-      <div id="frame">
-        <button id="back">뒤로</button>
-        <div class="folder-list">
-          {% for tag in site.data.tags %}
-          <!-- <a href="#tag-{{ tag.name }}" id="tag-{{ tag.name }}" class="folder"><span class="folder-title">{{ tag.name }}</span></a> -->
-          <div class="folder-group">
-            <div class="folder">
-              <input type="radio" id="tag-{{ tag.name }}" name="tag" value="{{ tag.name }}">
-              <label class="folder-title" for="tag-{{ tag.name }}">{{ tag.name }}({{ site.tags[tag.name].size }})</label>
-            </div>
-            <ul class="post-list">
-              {% for post in site.tags.[tag.name] %}
-                {% if forloop.index0 == 6 %}
-                  {% break %}
-                {% endif %}
-                <li class="post-list-item">
-                  <a href="{{ post.url }}">
-                    <span class="post-title">{{ post.title }}</span>
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      
-
+      </ul>
     </div>
   </article>
   <article class="main-group pht">
     <div class="group-title">
-      <span class="front">photograph</span>
-      <span class="back">02</span>
+      02<br />
+      photograph
     </div>
     <div class="group-content">
       <ul class="post-list">
@@ -108,15 +95,15 @@ layout: default
   </article>
   <article class="main-group">
     <div class="group-title">
-      <span class="front">project</span>
-      <span class="back">03</span>
+      03<br />
+      project
     </div>
     <div class="group-content"></div>
   </article>
   <article class="main-group skills">
     <div class="group-title">
-      <span class="front">skills</span>
-      <span class="back">04</span>
+      04<br />
+      skills
     </div>
     <div class="group-content group-skill">
       {% for skill in site.data.skills %}
@@ -135,26 +122,6 @@ layout: default
 </div>
 
 <script>
-  const frame = document.getElementById('frame');
-  const back = document.getElementById('back');
-  
-  const folder = document.querySelector('.folder-list');
-  folder.addEventListener('dblclick', function(e) {
-    const target = e.target.parentElement.parentElement;
-    if (target.classList.contains('folder-group')) {
-      target.classList.toggle('open');
-      changePage(frame);
-    }
-  });
-
-  back.addEventListener('click', function(e) {
-    changePage(frame);
-  });
-
-  const changePage = function(item) {
-    item.classList.toggle('open');
-  }
-
   const degrees = document.querySelectorAll('.skill-degree');
   const styleSheet = document.styleSheets[1];
   console.log(degrees);

@@ -19,9 +19,9 @@
 }
 
 .container {
-  width: 100%;max-width:$maxWidth;margin: 0 auto;padding: 0 15px;
+  overflow:hidden;width:100%;max-width:$maxWidth;margin:0 auto;padding:0;
   @include media("max-width: 767px"){
-    width: 100%;padding:30px;
+    width:100%;padding:30px;
   }
 }
 
@@ -70,147 +70,66 @@ header {
   }
 }
 
-.background {
-  background-image: linear-gradient(to bottom right, #5577bb, #6699cc);
-}
-
 .arrow {
   position:absolute;width:100px;height:100px;border-bottom:1px solid #111;border-right:1px solid #111;background:transparent;transition:border 100ms;
   // &:after {content:'';position:absolute;display:block;width:100px;height:100px;border-bottom:1px solid #111;border-right:1px solid #111;box-shadow:10px 10px #eee;}
   &:hover {border-bottom-width:4px;border-right-width:4px}
-  &.arrow-left {-webkit-transform:rotate(135deg);transform:rotate(135deg);top:540px;right:28%}
-  &.arrow-right {-webkit-transform:rotate(-45deg);transform:rotate(-45deg);top:680px;right:28%}
+  &.arrow-left {-webkit-transform:rotate(135deg);transform:rotate(135deg);top:490px;left:15%}
+  &.arrow-right {-webkit-transform:rotate(-45deg);transform:rotate(-45deg);top:350px;left:15%}
 }
 
 .home {
   * {font-family:'Roboto Mono'}
-  position:absolute;top:0;right:0;bottom:0;left:0;overflow-x:hidden;overflow-y:auto;-webkit-perspective:800px;perspective:800px;perspective-origin:left;-webkit-perspective-origin-x:left;-webkit-perspective-origin-y:center;
+  // position:absolute;top:0;right:0;bottom:0;left:0;overflow-x:hidden;overflow-y:auto;-webkit-perspective:800px;perspective:800px;perspective-origin:left;-webkit-perspective-origin-x:left;-webkit-perspective-origin-y:center;
   .main-group {
-    float:left;width:100%;padding:150px 10%;transform-style:preserve-3d;
-    .group-title {
-      float:left;width:80px;margin-right:100px;writing-mode:vertical-lr;text-orientation:upright;pointer-events:none;
-      span {display:block;font-weight:900;color:#333}
-      .front {margin-left:5px;font-size:2.5em;letter-spacing:20px;-webkit-transform:translateZ(-100px);transform:translateZ(-100px);z-index:4;pointer-events:none;}
-      .back {margin-top:-80px;margin-left:60px;font-size:14em;color:#eee;line-height:0;letter-spacing:-80px;-webkit-transform:translateZ(-300px);transform:translateZ(-300px);z-index:3;pointer-events:none;}
-    }
-    .group-content {position:relative;}
-    &.dev {
-      .group-content {
-        overflow:hidden;
-        #frame {
-          position:relative;overflow:hidden;width:1800px;margin-top:120px;
-          // transition:margin 0.3s ease-in;
-          &.open {
-            margin-left:-960px;
-          }
-          .folder-list {
-            overflow:hidden;max-width:900px;
-            .folder-group {
-              float:left;width:180px;height:178px;margin:30px;
-              .folder {
-                text-align: center;
-                input[type="radio"] {
-                  width:1px;height:1px;margin:-1px;-webkit-appearance:none;-moz-appearance:none;appearance:none;
-                  &:focus {outline:none}
-                  &:focus + label, &:active + label {background:#eee;}
-                  & + label {
-                    display:block;width:180px;height:162px;-webkit-user-select:none;-moz-user-select:none;user-select:none;
-                    &:before {content:'';display:block;width:180px;height:130px;background:center 50% / 120px no-repeat;background-image:url('/assets/img/folder-close.png');}    
-                  }
-                }
-              }
-              .post-list {
-                overflow:hidden;display:none;z-index:-1;
-                .post-list-item { 
-                  // overflow:hidden;position:absolute;left:0;top:0;width:1px;height:1px;
-                  overflow:hidden;float:left;
-                  input[type="radio"] {
-                    width:1px;height:1px;margin:-1px;-webkit-appearance:none;-moz-appearance:none;appearance:none;
-                    &:focus {outline:none}
-                    &:focus + label, &:active + label {background:#eee;}
-                    & + label {
-                      -webkit-user-select:none;-moz-user-select:none;user-select:none;
-                      &:before {content:'';display:block;width:180px;height:130px;background:center 50% / 120px no-repeat;background-image:url('/assets/img/folder-close.png');}    
-                    }
-                  }
-                  // a {
-                  //   position:absolute;top:0;right:0;bottom:0;left:0;padding:15px;border:1px solid #111;
-                  //   &:hover {}
-                  //   .post-title {display:block;margin-right:0;margin-bottom:10px;font-size:1em;line-height:1.4;}
-                  // }
-                }
-              }
-              &.open { 
-                .folder {
-                  input[type="radio"] {
-                    & + label {
-                      &:before {background-image:url('/assets/img/folder-open.png');}
-                    }
-                  }
-                }
-                .post-list {
-                  position:absolute;left:720px;top:0;display:block;height:500px;
-                  .post-list-item { 
-                    position:relative;width:400px;height:120px;margin:0 20px;background:url('/assets/img/file.png') left center / 50px no-repeat;
-                    .post-title {
-                      position:absolute;top:50%;margin-left:30px;margin-right:0;font-size:16px;line-height:1.4;transform:translateY(-50%);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    &.pht {
-      .post-list {
-        width:60%;padding:15px 0;text-align:center;background:url('/assets/img/filmback.png') center / 100%;opacity:0.9;
-        .post-list-item {
-          margin:30px 0;
-          a {
-            position:relative;width:90%;
-            &:hover {padding-left:0;}
-            img {width:100%;opacity:0.9;}
-            .post-tags {position:absolute;right:0;bottom:0;margin:30px;color:rgba(255, 181, 0, 0.8);letter-spacing:2px;text-shadow:0 0 6px #ff4700, 0 0 1px #ff7600}
-          }
-        }
-      }
-    }
-    
-    &:first-child {
-      height:100%;
-      #hello {position:absolute;top:50%;width:600px;transform:translateY(-65%)}
-    }
-    &:nth-child(2) {
-      .group-content {padding-left:240px;}
-    }
-    &:nth-child(odd) {
-      .group-title{
-        float:right;margin-right:0;
-        .back {margin-left:315px}
-      }
-    }
+    position:relative;float:left;width:100%;padding:100px 10%;
+    &:first-child{padding-top:200px;padding-bottom:150px}
     &:last-child {
       margin-top:200px;
       .group-title {float:none;display:block;width:50px;height:200px;margin:30px;font-size:1em;line-height:1.4}
     }
-  }
-
-  .skills {
-    .group-skill {
-      overflow:hidden;margin-left:-10px;padding-left:10px;
-      .skill {
-        position:relative;width:60%;margin:30px 0;padding:35px 0;border:1px solid #111;-webkit-transition:margin 100ms, box-shadow 100ms;transition:margin 100ms, box-shadow 100ms;
-        .skill-degree {
-          width:90px;margin-right:22px;padding-right:28px;padding-left:30px;font-size:3em;font-weight:900;vertical-align:middle;border-right:1px solid #111;
-          &:after {content:'';position:absolute;top:72px;left:152px;display:block;height:1px;background:#333;box-shadow:10px 10px 0 3px #eee}
+    &.dev {
+      .post-list-item {
+        -webkit-transition:margin 100ms;transition:margin 100ms;
+        a {
+          padding-top:5px;padding-bottom:5px;padding-left:50px;background:url('/assets/img/file_01.png') left center / 35px no-repeat ;
+          .post-title {font-size:1.1em;}
+          .post-tags {font-size:0.9em;margin-top:10px;}
+          &:hover {padding-left:50px;}
         }
-        .skill-name {font-size:1.4em;vertical-align:super}
-        &:hover {margin-left:-10px;box-shadow:10px 10px #eee}
+        &:hover {margin-left:-10px;}
       }
     }
+    &.pht {
+      .post-list-item {
+        margin:0 0 30px;
+        a {
+          position:relative;display:block;width:100%;height:392px;overflow:hidden;-webkit-transition:margin 100ms, box-shadow 100ms;transition:margin 100ms, box-shadow 100ms;
+          img {width:700px;position:absolute;top:50%;transform:translateY(-50%)}
+          .post-tags {position:absolute;right:0;bottom:0;margin:30px;color:rgba(255, 181, 0, 0.8);letter-spacing:2px;text-shadow:0 0 6px #ff4700, 0 0 1px #ff7600}
+          &:hover {margin-left:-10px;padding-left:0;box-shadow:10px 10px #eee}
+        }
+      }
+    }
+    &.skills {
+      .group-skill {
+        overflow:hidden;margin-left:-10px;padding-left:10px;
+        .skill {
+          position:relative;width:100%;margin-bottom:30px;padding:30px 0;border:1px solid #111;-webkit-transition:margin 100ms, box-shadow 100ms;transition:margin 100ms, box-shadow 100ms;
+          .skill-degree {
+            width:90px;margin-right:22px;padding-right:28px;padding-left:30px;font-size:3em;font-weight:900;vertical-align:middle;border-right:1px solid #111;
+            &:after {content:'';position:absolute;top:68px;left:152px;display:block;height:1px;background:#333;box-shadow:10px 10px 0 3px #eee}
+          }
+          .skill-name {font-size:1.4em;vertical-align:top}
+          &:hover {margin-left:-10px;box-shadow:10px 10px #eee}
+        }
+      }
+    }
+    #hello {width:450px;}
+    .group-title {float:left;width:150px;margin-bottom:50px;font-size:1.2em;color:#333;line-height:1.4;letter-spacing:2px}
+    .group-content {position:relative;float:right;min-width:700px;max-width:calc(100% - 180px)}
   }
+
 }
 
 .page {
@@ -309,14 +228,14 @@ header {
 
 footer {
   // overflow:hidden;width:100%;max-width:$maxWidth;margin:0 auto;padding:30px 15px;
-  position:absolute;right:0;height:100%;margin-right:80px;font-weight:100;text-align:center;writing-mode:vertical-lr;
+  // position:absolute;right:0;height:100%;margin-right:80px;font-weight:100;text-align:center;writing-mode:vertical-lr;
   .link {
     font-size:14px;
-    color:#666;
+    color:#111;
     letter-spacing:4px;
     margin-bottom:10px;
     &:not(&:last-child):after {content:','}
-    &:before {color:#111;}
+    &:before {color:#999;}
     &.github:before {content:'github: '}
     &.email:before {content:'email: '}
   }

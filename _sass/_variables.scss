@@ -5,11 +5,12 @@
 // $logoColor: #111111;
 $purple: #995ff5;
 $purpleDark: darken($purple, 10%);
+$purpleLight: lighten($purple, 20%);
 $baseColor: #444;
 $baseActiveColor: lighten($baseColor, 20%);
 $subColor: #666666;
 
-$maxWidth: 1200px;
+$maxWidth: 1400px;
 
 
 /*
