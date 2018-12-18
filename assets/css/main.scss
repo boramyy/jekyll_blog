@@ -143,6 +143,40 @@ header {
       }
     }
     .group-content {position:relative;float:right;min-width:700px;max-width:calc(100% - 180px)}
+
+
+
+    .folder-list {
+      overflow:hidden;max-width:900px;
+      .folder-group {
+        float:left;width:180px;height:178px;margin:30px;
+        .folder {
+          text-align: center;
+          input[type="radio"] {
+            width:1px;height:1px;margin:-1px;-webkit-appearance:none;-moz-appearance:none;appearance:none;
+            &:focus {outline:none}
+            &:focus + label, &:active + label {background:#eee;}
+            & + label {
+              display:block;width:180px;height:162px;-webkit-user-select:none;-moz-user-select:none;user-select:none;
+              &:before {content:'';display:block;width:180px;height:130px;background:center 50% / 120px no-repeat;background-image:url('/assets/img/folder-close.png');}    
+            }
+          }
+        }
+        &.open { 
+          .folder {
+            input[type="radio"] {
+              & + label {
+                &:before {background-image:url('/assets/img/folder-open.png');}
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+
   }
 
 }

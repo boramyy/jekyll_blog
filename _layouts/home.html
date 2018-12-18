@@ -101,7 +101,26 @@ layout: default
       <span class="text">project</span>
       <a href="/proj"><span class="more"></span></a>
     </div>
-    <div class="group-content"></div>
+    <div class="group-content">
+      <ul class="folder-list">
+        {% for post in site.categories.projects %}
+        {% if forloop.index0 == 5 %}
+        {% break %}
+        {% endif %}
+        <li class="folder-group">
+          <a class="folder" href="{{ post.url }}">
+            <!-- <img src="/assets/img/{{ post.img }}"> -->
+            <span class="post-title">{{ post.title }}</span>
+            <div class="post-tags">
+              {% for tag in post.tags %}
+              <span class="post-tag {{ tag }}">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </article>
   <!-- <article class="main-group skills">
     <div class="group-title">
