@@ -1,16 +1,6 @@
-<!-- {% if page.url != "/" %} -->
-<header class="small">
+<header class="container">
+  {% if page.url != "/" %}
   <h1 id="logo"><a href="/"><img src="/assets/img/logo.png"></a></h1>
+  {% endif %}
   {% include navigation.html %}
 </header>
-<!-- {% endif %} -->
-
-<!-- <h1>{{ page.url }}</h1>
-{% if page.url != "/" %}
-<header class="small">
-{% else %}
-<header>
-{% endif %}
-  <h1 id="logo"><a href="/"><img src="/assets/img/logo.png"></a></h1>
-  {% include navigation.html %}
-</header>  -->

@@ -1,0 +1,113 @@
+---
+layout: page
+title: me
+permalink: /me/
+tags: me
+order: 1
+---
+
+<div id="me">
+  <article class="me-group character">
+    <div class="group-content">
+      <img src="/assets/img/me_03.png">
+    </div>
+    <div class="group-title">
+      <!-- <span class="num">01</span> -->
+      <span class="text">안녕하세요</span>
+      <span class="text">개발하는 김보람입니다</span>
+      <div class="tags">
+        <span class="tag">front-end</span>
+        <span class="tag">javascript</span>
+        <span class="tag">react</span>
+        <span class="tag">절찬리구직중</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="me-group skills">
+    <div class="group-title">
+      <span class="text">능력치</span>
+      <span class="text">어필</span>
+    </div>
+    <div class="group-content group-skill">
+      {% for skill in site.data.skills %}
+        <div class="skill {{ skill.class }}">
+          <span class="skill-degree" color="{{ skill.color }}">{{ skill.degree }}</span>
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="arrow arrow-right"></div>
+    <div class="arrow arrow-left"></div>
+  </article>
+
+  <article class="me-group exps">
+    <div class="group-title">
+      <span class="text">경험치</span>
+      <span class="text">어필</span>
+    </div>
+    <div class="group-content">
+      {% for exp in site.data.exp %}
+        <div class="exp">
+          <div class="exp-term">{{ exp.term }}</div>
+          <div class="exp-name">
+            {{ exp.name }}
+            <span class="exp-position">{{ exp.position }}</span>
+          </div>
+          <div class="exp-desc">
+            {{ exp.desc }}
+            <div class="exp-envs">
+            {% for env in exp.env %}
+              <span class="exp-env">{{ env }}</span>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </article>
+
+  <article class="me-group contact">
+    <div class="group-title">
+      <!-- <span class="num">02</span> -->
+      <span class="text">피드백을</span>
+      <span class="text">기다리고 있습니다!</span>
+    </div>
+    <div class="group-content">
+      <!-- <p>코드에 대한 피드백을 기다리고 있습니다!</p> -->
+      <form action="javascript:sendMail();" name="sendMail" id="sendMail" method="post" >
+        <input type="hidden" name="mail_to" value="boramyyo@gmail.com">
+        
+        <label for="mail_title">제목</label>
+        <input type="text" id="mail_title" name="mail_title" class="mail-input" placeholder="이메일 제목을 입력해주세요." required>
+        
+        <label for="mail_title">내용</label>
+        <textarea id="mail_content" name="mail_content" class="mail-input" placeholder="내용을 입력해주세요." required></textarea>
+
+        <input type="submit" class="btn-submit" value="보내기">
+      </form>
+    </div>
+  </article>
+</div>
+
+<script>
+  
+  const degrees = document.querySelectorAll('.skill-degree');
+  const styleSheet = document.styleSheets[1];
+  degrees.forEach(function (item, index) {
+    styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ' .skill-degree:after {width: calc(' + item.innerHTML + '% - 18%);}', styleSheet.rules.length);
+    styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ':hover .skill-degree:after {box-shadow:10px 10px 0 3px #' + item.getAttribute('color') + '!important;}', styleSheet.rules.length);
+  });
+
+  const sendMail = function() {
+    const sendMailForm = document.sendMail;
+    window.location= `mailto:${sendMailForm.mail_to.value}?subject=${sendMailForm.mail_title.value}&body=${sendMailForm.mail_content.value}`;
+  }
+
+  const arrow = document.querySelectorAll('.arrow');
+  arrow.forEach(function (item, index) {
+    item.addEventListener('click', function(e){
+      console.log('hoho', e.target.classList[1]);
+    });
+  });
+</script>

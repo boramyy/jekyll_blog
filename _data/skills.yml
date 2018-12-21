@@ -1,12 +1,17 @@
 - name: javascript
   degree: 75
   class: js
-  color: ffcc66
+  color: f9bd00
 
-- name: html/css
+- name: html
   degree: 80
   class: html
-  color: ff5a00
+  color: ff5c00
+
+- name: css
+  degree: 80
+  class: css
+  color: 00abe2
 
 - name: react
   degree: 50
@@ -18,7 +23,12 @@
   class: vue
   color: 4fc08d
 
-- name: hoho
+- name: photoshop
+  degree: 60
+  class: photoshop
+  color: 00c6ff
+
+- name: illustrator
   degree: 70
-  class: vue
-  color: 4fc08d
+  class: illustrator
+  color: ff7300
