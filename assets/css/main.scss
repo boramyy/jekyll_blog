@@ -46,11 +46,14 @@ header {
   }
 }
 
-.arrow {
-  position:absolute;width:100px;height:100px;border-bottom:1px solid #111;border-right:1px solid #111;background:transparent;transition:border 100ms;
-  &:hover {border-bottom-width:4px;border-right-width:4px}
-  &.arrow-left {-webkit-transform:rotate(135deg);transform:rotate(135deg);top:490px;left:15%}
-  &.arrow-right {-webkit-transform:rotate(-45deg);transform:rotate(-45deg);top:350px;left:15%}
+#arrow-box {
+  position:absolute;top:360px;left:15%;
+  .arrow {
+    width:100px;height:100px;border-bottom:1px solid #111;border-right:1px solid #111;-webkit-transition:border 100ms;transition:border 100ms;
+    &:hover {border-bottom-width:4px;border-right-width:4px}
+    &.arrow-right {-webkit-transform:rotate(-45deg);transform:rotate(-45deg);margin-bottom:40px}
+    &.arrow-left {-webkit-transform:rotate(135deg);transform:rotate(135deg)}
+  }
 }
 
 .home {
@@ -87,20 +90,6 @@ header {
         }
       }
     }
-    // &.skills {
-    //   .group-skill {
-    //     overflow:hidden;margin-left:-10px;padding-left:10px;
-    //     .skill {
-    //       position:relative;width:100%;margin-bottom:30px;padding:30px 0;border:1px solid #111;-webkit-transition:margin 100ms, box-shadow 100ms;transition:margin 100ms, box-shadow 100ms;
-    //       .skill-degree {
-    //         width:90px;margin-right:22px;padding-right:28px;padding-left:30px;font-size:3em;font-weight:900;vertical-align:middle;border-right:1px solid #111;
-    //         &:after {content:'';position:absolute;top:68px;left:152px;display:block;height:1px;background:#333;box-shadow:10px 10px 0 3px #eee}
-    //       }
-    //       .skill-name {font-size:1.4em;vertical-align:top}
-    //       &:hover {margin-left:-10px;box-shadow:10px 10px #eee}
-    //     }
-    //   }
-    // }
     #hello {width:450px;}
     .group-title {
       float:left;width:150px;margin-bottom:50px;font-size:1em;color:#333;line-height:1.4;letter-spacing:2px;
@@ -280,7 +269,7 @@ header {
           display:inline-block;margin-bottom:20px;font-size:1.6em;font-weight:100;
           .exp-position {
             font-size:0.8em;font-weight:bold;
-            &:before {content:' / ';margin:0 12px;font-size:10px;vertical-align:middle}
+            &:before {content:'/ ';margin:0 12px;font-size:10px;vertical-align:4px}
           }
         }
         .exp-desc {
@@ -293,18 +282,23 @@ header {
       }
     }
     &.skills {
-      height:730px;margin-bottom:90px;
       * {font-family:'Roboto Mono';}
-      .group-skill {
+      .group-content {overflow:hidden;height:650px;margin-left:-10px;padding-left:10px;}
+      #group-skill {
+        width:100%;-webkit-transition:margin 100ms;transition:margin 100ms;
         .skill {
-          position:relative;width:100%;margin-bottom:20px;padding:30px 0;border:1px solid #111;-webkit-transition:margin 100ms, box-shadow 100ms;transition:margin 100ms, box-shadow 100ms;
+          float:left;margin-right:2%;margin-bottom:20px;padding:30px 0;border:1px solid #111;-webkit-transition:margin 100ms, box-shadow 100ms, transform 300ms;transition:margin 100ms, box-shadow 100ms, transform 300ms;
           .skill-degree {
-            width:90px;margin-right:22px;padding-right:28px;padding-left:30px;font-size:3em;font-weight:900;vertical-align:middle;border-right:1px solid #111;
-            &:after {content:'';position:absolute;top:68px;left:152px;display:block;height:1px;background:#333;box-shadow:10px 10px 0 3px #eee}
+            display:block;float:left;width:115px;margin-right:22px;padding-right:28px;padding-left:30px;font-size:3em;font-weight:900;border-right:1px solid #111;
+            // &:after {content:'';position:absolute;top:68px;left:152px;display:block;height:1px;background:#333;box-shadow:10px 10px 0 3px #eee}
           }
-          .skill-name {font-size:1.4em;vertical-align:top}
+          .skill-name {
+            display:block;float:left;width:calc(100% - 137px);position:relative;font-size:1.4em;
+            .skill-range {position:absolute;top:38px;left:0;display:block;height:1px;background:#333;box-shadow:10px 10px 0 3px #eee;}
+          }
           &:hover {margin-left:-10px;box-shadow:10px 10px #eee}
         }
+        &:after {@extend %clearFloat;}
       }
     }
     &.contact {
@@ -324,6 +318,19 @@ header {
           display:block;margin-top:30px;padding:10px 50px;font-size:1.4em;border:1px solid #111;-webkit-transition:box-shadow 100ms;transition:box-shadow 100ms;
           &:hover {box-shadow:10px 10px #eee}
           &:active {box-shadow:4px 4px #ddd}
+        }
+      }
+      .links {
+        position:absolute;top:400px;
+        .link {
+          display:block;margin-bottom:12px;fill:#555;
+          svg {vertical-align:middle}
+          &.github {
+            svg {margin-right:5px;}
+          }
+          &.email {
+            svg {margin-left:1px;margin-right:6px;}
+          }
         }
       }
     }

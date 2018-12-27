@@ -26,25 +26,51 @@ order: 1
 
   <article class="me-group skills">
     <div class="group-title">
+      <span class="text">개인</span>
       <span class="text">능력치</span>
-      <span class="text">어필</span>
     </div>
-    <div class="group-content group-skill">
+    <div class="group-content">
+      <div id="group-skill">
+        {% for skill in site.data.skills %}
+          <div class="skill {{ skill.class }}">
+            <span class="skill-degree">{{ skill.degree }}</span>
+            <span class="skill-name">
+              {{ skill.name }}
+              <span class="skill-range" color="{{ skill.color }}" degree="{{ skill.degree }}"></span>
+            </span>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- <div id="group-skill">
       {% for skill in site.data.skills %}
+      {% assign num = forloop.index | modulo: 5 %}
+      {% if num == 1 %}
+      <div class="group-skill">
+        {% endif %}
         <div class="skill {{ skill.class }}">
-          <span class="skill-degree" color="{{ skill.color }}">{{ skill.degree }}</span>
-          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-degree">{{ skill.degree }}</span>
+          <span class="skill-name">
+            {{ skill.name }}
+            <span class="skill-range" color="{{ skill.color }}" degree="{{ skill.degree }}"></span>
+          </span>
         </div>
+        {% if num == 0 %}
+      </div>
+      {% endif %}
       {% endfor %}
+      </div> -->
     </div>
-    <div class="arrow arrow-right"></div>
-    <div class="arrow arrow-left"></div>
+    <div id="arrow-box">
+      <div class="arrow arrow-right"></div>
+      <div class="arrow arrow-left"></div>
+    </div>
   </article>
 
   <article class="me-group exps">
     <div class="group-title">
+      <span class="text">협업</span>
       <span class="text">경험치</span>
-      <span class="text">어필</span>
     </div>
     <div class="group-content">
       {% for exp in site.data.exp %}
@@ -74,29 +100,46 @@ order: 1
       <span class="text">기다리고 있습니다!</span>
     </div>
     <div class="group-content">
-      <!-- <p>코드에 대한 피드백을 기다리고 있습니다!</p> -->
       <form action="javascript:sendMail();" name="sendMail" id="sendMail" method="post" >
         <input type="hidden" name="mail_to" value="boramyyo@gmail.com">
-        
         <label for="mail_title">제목</label>
         <input type="text" id="mail_title" name="mail_title" class="mail-input" placeholder="이메일 제목을 입력해주세요." required>
-        
         <label for="mail_title">내용</label>
         <textarea id="mail_content" name="mail_content" class="mail-input" placeholder="내용을 입력해주세요." required></textarea>
-
         <input type="submit" class="btn-submit" value="보내기">
       </form>
+    </div>
+    <div class="links">
+      <a href="https://github.com/boramyy" class="link github">
+        <svg viewBox="0 0 32 32" width="16" height="16">
+          <path d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path>
+        </svg>
+        boramyy
+      </a>
+      <span class="link email">
+        <svg viewBox="0 0 14 16" width="14" height="16">
+          <path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path>
+        </svg>
+        boramyyo@gmail.com
+      </span>
     </div>
   </article>
 </div>
 
 <script>
   
-  const degrees = document.querySelectorAll('.skill-degree');
+  // const degrees = document.querySelectorAll('.skill-degree');
+  // const styleSheet = document.styleSheets[1];
+  // degrees.forEach(function (item, index) {
+  //   styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ' .skill-degree:after {width: calc(' + item.innerHTML + '% - 18%);}', styleSheet.rules.length);
+  //   styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ':hover .skill-degree:after {box-shadow:10px 10px 0 3px #' + item.getAttribute('color') + '!important;}', styleSheet.rules.length);
+  // });
+
+  const ranges = document.querySelectorAll('.skill-range');
   const styleSheet = document.styleSheets[1];
-  degrees.forEach(function (item, index) {
-    styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ' .skill-degree:after {width: calc(' + item.innerHTML + '% - 18%);}', styleSheet.rules.length);
-    styleSheet.insertRule('.skill.' + item.parentNode.classList[1] + ':hover .skill-degree:after {box-shadow:10px 10px 0 3px #' + item.getAttribute('color') + '!important;}', styleSheet.rules.length);
+  ranges.forEach(function (item, index) {
+    item.style.width = 'calc(' + item.getAttribute('degree') + '%';
+    styleSheet.insertRule('.skill.' + item.parentNode.parentNode.classList[1] + ':hover .skill-range {box-shadow:10px 10px 0 3px #' + item.getAttribute('color') + '!important;}', styleSheet.rules.length);
   });
 
   const sendMail = function() {
@@ -104,10 +147,41 @@ order: 1
     window.location= `mailto:${sendMailForm.mail_to.value}?subject=${sendMailForm.mail_title.value}&body=${sendMailForm.mail_content.value}`;
   }
 
-  const arrow = document.querySelectorAll('.arrow');
-  arrow.forEach(function (item, index) {
-    item.addEventListener('click', function(e){
-      console.log('hoho', e.target.classList[1]);
-    });
+  const arrowBox = document.getElementById('arrow-box');
+  const groupSkill = document.getElementById('group-skill');
+  const skills = document.getElementsByClassName('skill');
+  let groupSkillMarginTop = 0;
+  let groupSkillMarginLeft = 0;
+  const MARGIN_LEFT = 104;
+  const PAGING = Math.floor((skills.length / 5 + 1));
+
+  groupSkill.style.width = PAGING*100 + '%';
+
+  Array.prototype.forEach.call(skills, function (item, index) {
+    item.style.width = (100 / PAGING) - 2 + '%';
   });
+
+  arrowBox.addEventListener('click', function(e){
+    const target = e.target;
+    
+    if (target.classList.contains('arrow-left')) {
+      groupSkillMarginLeft += MARGIN_LEFT;
+    } else {
+      groupSkillMarginLeft -= MARGIN_LEFT;
+    }
+
+    let times = 0;
+    Array.prototype.forEach.call(skills, function (item, index) { 
+      // setTimeout(function () {
+      //   item.style.marginLeft = groupSkillMarginLeft + '%';
+      //   item.style.marginRight = -groupSkillMarginLeft + '%';
+      // }, index * 100);
+      times = times < 4 ? times + 1 : 0;
+      setTimeout(function () {
+        item.style.transform = 'translateX(' + groupSkillMarginLeft + '%)';
+      }, times * 100);
+    });
+    
+  });
+
 </script>
