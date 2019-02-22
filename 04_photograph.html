@@ -5,20 +5,16 @@ permalink: /pho/
 categories: pho
 tags: pho
 order: 4
+open: 1
 ---
 
-<ul class="post-list">
+<ul class="photo-list">
   {% for post in site.categories.photograph %}
-  <li class="post-list-item">
+  <li class="photo-list-item">
     <a href="{{ post.url }}">
-      <span class="post-title">{{ post.title }}</span>
-      <span class="post-date">{{ post.date | date: "%B %d, %Y"}}</span>  
-      <div class="post-desc">
-        <div class="post-excerpt">{{ post.excerpt }}</div>
-        {% for tag in post.tags %}
-          <span class="post-tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
+      <img class="photo-thumb" src="/assets/img/{{ post.img }}">
+      <span class="photo-title">{{ post.title }}</span>
+      <span class="photo-date">{{ post.date | date: "%B %d, %Y"}}</span>
     </a>
   </li>
   {% endfor %}

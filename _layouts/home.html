@@ -3,131 +3,115 @@ layout: default
 ---
 <!-- <div class="background"></div> -->
 <div class="home">
-  <!-- <article class="main-group"> -->
-    <!-- <ul class="post-list">
-      {% for post in site.posts %}
-      <li class="post-list-item">
-        <a href="{{ post.golink | default: post.url }}">
-          <span class="post-title">{{ post.title }}</span>
-          <span class="post-date">{{ post.date | date: "%B %d, %Y"}}</span>
-          <div class="post-desc">
-            <div class="post-excerpt">{{ post.excerpt }}</div>
-            {% for tag in post.tags %}
-            <span class="post-tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        </a>
-      </li>
-      {% endfor %}
-    </ul> -->
-  <!-- </article> -->
   <article class="main-group">
-    <div class="group-title">
-      <span class="num">01</span>
-      <span class="text">i'm me</span>
-      <a href="/me"><span class="more"></span></a>
-    </div>
-    <div class="group-content">
-      <img id="hello" src="/assets/img/hello.png">
-    </div>
-  </article>
-  <article class="main-group dev">
-    <div class="group-title">
-      <span class="num">02</span>
-      <span class="text">development</span>
-      <a href="/dev"><span class="more"></span></a>
-    </div>
-    <div class="group-content">
+    <h2 class="group-title container">
+      <!-- <span class="thin">junior</span><br /> -->
+      front-end<br />
+      developer<br />
+      <span class="thin">in seoul</span>
+      <p class="desc">
+        서울 사는 주니어 프론트엔드 개발자입니다. 응애.<br>
+        이 사이트를 통해 글쓰기와 코딩 능력을 함께 길러 나가고자 합니다.
+        현재 절찬리 구직중입니다.
+      </p>
+    </h2>
+    <div class="group-content container">
+      <!-- <a href="/dev" class="link-box">
+        <span class="link-title">devlopment</span>
+        <span class="link-desc">javascript, react, vue, html, css, and so on.</span>
+      </a>
+      <a href="/proj" class="link-box">
+        <span class="link-title">projects</span>
+        <span class="link-desc">구현한 프로젝트들을 여기서 만나보세요</span>
+      </a>
+      <a href="/pho" class="link-box">
+        <span class="link-title">photograph</span>
+        <span class="link-desc">내가 세상을 바라보는 시선</span>
+      </a>
+      -->
+
       <ul class="post-list">
         {% for post in site.categories.development %}
-        {% if forloop.index0 == 5 %}
-        {% break %}
-        {% endif %}
-        <li class="post-list-item">
-          <a href="{{ post.url }}">
-            <span class="post-title">{{ post.title }}</span>
+
+        <a href="/dev" class="link-box">
+          <span class="link-title">{{ post.title }}</span>
+          <span class="link-desc">
+            {{ post.date | date: "%B %d, %Y"}}
             <div class="post-tags">
               {% for tag in post.tags %}
               <span class="post-tag {{ tag }}">{{ tag }}</span>
               {% endfor %}
             </div>
-          </a>
-        </li>
+          </span>
+        </a>
+
         {% endfor %}
       </ul>
+
+
     </div>
   </article>
   <article class="main-group">
-    <div class="group-title">
-      <span class="num">03</span>
-      <span class="text">project</span>
-      <a href="/proj"><span class="more"></span></a>
-    </div>
-    <div class="group-content">
-      <div class="folder-list">
-        {% for project in site.categories.projects %}
-        <div class="folder">
-          <input type="radio" id="project-{{ project.title }}" name="project" value="{{ project.title }}">
-          <label class="folder-title" for="project-{{ project.title }}">{{ project.title }}</label>
-        </div>
-        {% endfor %}
-      </div>
+    <h2 class="group-title container">
+      <span class="thin">what i pursue,</span><br />
+      keep thinking<br />
+      about anything.
+      <!-- design-loving<br>
+      developer,<br> -->
+      <!-- <p class="desc">
+        첫번째로 디자인을 전공했고, 두번째로 개발을 전공중입니다. 거듭나기 위해 공부중입니다.
+      </p> -->
+    </h2>
+    <div class="group-content container">
+      <table class="stack-box">
+        <tr>
+          <!-- <td class="stack-title">development</td> -->
+          <td class="stack-subtitle">front-end</td>
+          <td class="stack-content">
+            <p class="stack-desc">
+              javascript의 클로저, 등을 활용해 코드를 작성합니다.
+              html과 css 만으로 원하는대로 웹페이지를 그려낼 수 있고,
+              다양한 라이브러리를 사용해보았습니다.
+            </p>
+            <span class="stack-skills">
+              javascript<br>react<br>vue<br>jquery<br>materialize<br>bootstrap<br>sass
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <!-- <td class="stack-title"></td> -->
+          <td class="stack-subtitle">back-end</td>
+          <td class="stack-content">
+            <p class="stack-desc">
+              데이터베이스와 연동해 기본적인 crud 게시판 구현이 가능하며,
+              짜여진 코드를 읽고 이해하는데 문제가 없습니다.
+            </p>
+            <span class="stack-skills">
+              java - spring<br>node - express
+            </span>
+          </td>
+        </tr>
+      </table>
     </div>
   </article>
-  <article class="main-group pht">
-    <div class="group-title">
-      <span class="num">04</span>
-      <span class="text">photograph</span>
-      <a href="/pht"><span class="more"></span></a>
-    </div>
-    <div class="group-content">
-      <ul class="photo-list">
-        {% for photo in site.categories.photograph %}
-          {% if forloop.index0 == 5 %}
-            {% break %}
-          {% endif %}
-          <li class="photo-list-item">
-            <a href="{{ photo.url }}">
-              <img src="/assets/img/{{ photo.img }}">
-              <div class="photo-tags">
-                {% for tag in photo.tags %}
-                <span class="photo-tag {{ tag }}">{{ tag }}</span>
-                {% endfor %}
-              </div>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </article>
-  <!-- <article class="main-group skills">
-    <div class="group-title">
-      <span class="num">04</span>
-      <span class="text">skills</span>
-      <a href="/me"><span class="more"></span></a>
-    </div>
-    <div class="group-content group-skill">
-      {% for skill in site.data.skills %}
-        <div class="skill {{ skill.class }}">
-          <span class="skill-degree" color="{{ skill.color }}">{{ skill.degree }}</span>
-          <span class="skill-name">{{ skill.name }}</span>
-        </div>
-      {% endfor %}
-    </div>
-    <div class="arrow arrow-right"></div>
-    <div class="arrow arrow-left"></div>
-  </article> -->
+
   <article class="main-group">
-    <span class="group-title">bibia<br>be ye ye</span>
+    <h2 class="group-title container">
+      bibia<br>be ye ye<br>
+      <!-- <span class="thin">think positive</span> -->
+      <p class="desc">
+        가나에서 사용하는 언어중 하나인 트위(twi)어로<br> 'all will be well'을 의미합니다.
+      </p>
+    </h2>
   </article>
 </div>
 
 <script>
-  const folder = document.querySelector('.folder-list');
-  folder.addEventListener('dblclick', function(e) {
-    const target = e.target.parentElement;
-    if (target.classList.contains('folder')) {
-      target.classList.toggle('open');
-    }
-  });
+  // const folder = document.querySelector('.folder-list');
+  // folder.addEventListener('dblclick', function(e) {
+  //   const target = e.target.parentElement;
+  //   if (target.classList.contains('folder')) {
+  //     target.classList.toggle('open');
+  //   }
+  // });
 </script>

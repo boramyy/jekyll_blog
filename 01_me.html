@@ -4,6 +4,7 @@ title: me
 permalink: /me/
 tags: me
 order: 1
+open: 0
 ---
 
 <div id="me">
@@ -30,7 +31,7 @@ order: 1
       <span class="text">능력치</span>
     </div>
     <div class="group-content">
-      <div id="group-skill">
+      <!-- <div id="group-skill">
         {% for skill in site.data.skills %}
           <div class="skill {{ skill.class }}">
             <span class="skill-degree">{{ skill.degree }}</span>
@@ -40,14 +41,14 @@ order: 1
             </span>
           </div>
         {% endfor %}
-      </div>
+      </div> -->
 
-      <!-- <div id="group-skill">
+      <div id="group-skill">
       {% for skill in site.data.skills %}
       {% assign num = forloop.index | modulo: 5 %}
-      {% if num == 1 %}
+      {% if num >= 1 %}
       <div class="group-skill">
-        {% endif %}
+      {% endif %}
         <div class="skill {{ skill.class }}">
           <span class="skill-degree">{{ skill.degree }}</span>
           <span class="skill-name">
@@ -55,11 +56,11 @@ order: 1
             <span class="skill-range" color="{{ skill.color }}" degree="{{ skill.degree }}"></span>
           </span>
         </div>
-        {% if num == 0 %}
+      {% if num >= 0 %}
       </div>
       {% endif %}
       {% endfor %}
-      </div> -->
+      </div>
     </div>
     <div id="arrow-box">
       <div class="arrow arrow-right"></div>
