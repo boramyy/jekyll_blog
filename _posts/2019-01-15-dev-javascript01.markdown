@@ -4,7 +4,7 @@ title: "javascript 웹 프로젝트 시작하기"
 permalink: /dev/javascript/web/01
 date: 2019-01-15
 categories: development
-tags: javascript node gulp
+tags: ["javascript", "node", "gulp"]
 published: true
 ---
 
