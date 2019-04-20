@@ -33,6 +33,7 @@ markdown: kramdown
 encoding: utf-8
 highlighter: rouge
 theme: minima
+future : true
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
