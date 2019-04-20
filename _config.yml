@@ -22,11 +22,13 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://boramyy.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: boramyy
 
-pagination:
-  enabled: true
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+# pagination:
+#   enabled: true
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
+
+paginate: 5
 
 # Build settings
 markdown: kramdown
@@ -36,7 +38,7 @@ theme: minima
 future : true
 plugins:
   - jekyll-feed
-  - jekyll-paginate-v2
+  - jekyll-paginate
 
 
 # Style  
@@ -44,7 +46,7 @@ sass:
   style: compressed
 
 gems:
-  - jekyll-paginate-v2
+  - jekyll-paginate
 
 # excerpt_separator: <!--more-->
 

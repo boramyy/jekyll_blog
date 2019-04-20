@@ -4,18 +4,18 @@ title: dev
 permalink: /dev/
 categories: development
 tags: development
-pagination: 
+<!-- pagination: 
   enabled: true
   title: 'dev'
   permalink: /:num/
   category: development
   per_page: 10
   sort_field: 'date'
-  sort_reverse: true
+  sort_reverse: true -->
 ---
 <h2 class="page-title">all<br>development<br>posts</h2>
 
-<!-- <ul class="post-list">
+<ul class="post-list">
   {% for post in site.categories.development %}
   <li class="post-list-item">
     <a href="{{ post.url }}">
@@ -29,9 +29,9 @@ pagination:
     </a>
   </li>
   {% endfor %}
-</ul> -->
+</ul>
 
-<ul class="post-list">
+<!-- <ul class="post-list">
   {% for post in paginator.posts %}
   <li class="post-list-item">
     <a href="{{ post.url }}">
@@ -66,5 +66,5 @@ pagination:
   <div id="arrow-box">  
     <a href="{{ paginator.previous_page_path }}" class="arrow arrow-left{% unless paginator.previous_page %} off{% endunless %}"></a>
     <a href="{{ paginator.next_page_path }}" class="arrow arrow-right{% unless paginator.next_page %} off{% endunless %}"></a>
-  </div>
+  </div> -->
 </div>
