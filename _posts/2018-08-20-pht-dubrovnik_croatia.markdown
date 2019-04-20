@@ -6,7 +6,7 @@ date: 2018-08-13
 permalink: /photograph/croatia/dubrovnik
 categories: photograph
 tags: dubrovnik croatia
-img: dubrovnik_01.jpg
+img: dubrovnik_thumb.jpg
 published: true
 ---
 

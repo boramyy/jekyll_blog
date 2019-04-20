@@ -166,10 +166,11 @@ header {
     overflow:hidden;
     .photo-list-item {
       overflow:hidden;float:left;margin-bottom:170px;width:100%;height:500px;
+      &:last-child {margin-bottom:0}
       a {
-        position:relative;display:inline-block;width:auto;height:500px;
+        position:relative;display:inline-block;width:100%;height:500px;
         .photo-thumb {display:block;width:auto;height:100%;opacity:1;-webkit-transition:opacity 300ms;transition:opacity 300ms;}
-        .photo-title {position:absolute;top:24%;right:-400px;width:600px;font-size:7.5em;font-weight:900;color:#000;line-height:1.2;letter-spacing:-4px;opacity:0.05;-webkit-transition:opacity 300ms;transition:opacity 300ms;}
+        .photo-title {position:absolute;top:24%;left:38%;width:600px;font-size:7.5em;font-weight:900;color:#000;line-height:1.2;letter-spacing:-4px;opacity:0.05;-webkit-transition:opacity 300ms;transition:opacity 300ms;}
         .photo-date {position:absolute;bottom:10%;right:-140px;margin-left:10px;font-size:13px;color:#111;line-height:1;opacity:0.1;-webkit-transition:opacity 300ms;transition:opacity 300ms;}
         &:hover {
           .photo-thumb {opacity:0.05;}

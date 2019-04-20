@@ -6,7 +6,7 @@ date: 2018-10-01
 permalink: /dev/jekyll/01
 categories: development
 tags: Jekyll sass
-published: true
+published: false
 ---
 
 
@@ -25,9 +25,8 @@ const hoho = function() {
 [Pygments 사용법2][Pygments2] <br/>
 [Rounge][rounge]
 
-
-<br/><br/>
-[Theme 참고][theme]
+<br/>
+[Theme 참고][theme] <br/>
 [Jekyll Docs][jekyll-docs]
 
 
