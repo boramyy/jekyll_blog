@@ -6,7 +6,7 @@ date: 2018-10-01
 permalink: /dev/jekyll/01
 categories: development
 tags: Jekyll sass
-published: false
+published: true
 ---
 
 
