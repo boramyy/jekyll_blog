@@ -15,7 +15,7 @@ tags: development
 ---
 <h2 class="page-title">all<br>development<br>posts</h2>
 
-<ul class="post-list">
+<!-- <ul class="post-list">
   {% for post in site.categories.development %}
   <li class="post-list-item">
     <a href="{{ post.url }}">
@@ -29,9 +29,9 @@ tags: development
     </a>
   </li>
   {% endfor %}
-</ul>
+</ul> -->
 
-<!-- <ul class="post-list">
+<ul class="post-list">
   {% for post in paginator.posts %}
   <li class="post-list-item">
     <a href="{{ post.url }}">
@@ -66,5 +66,5 @@ tags: development
   <div id="arrow-box">  
     <a href="{{ paginator.previous_page_path }}" class="arrow arrow-left{% unless paginator.previous_page %} off{% endunless %}"></a>
     <a href="{{ paginator.next_page_path }}" class="arrow arrow-right{% unless paginator.next_page %} off{% endunless %}"></a>
-  </div> -->
+  </div>
 </div>
