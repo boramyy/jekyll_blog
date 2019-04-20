@@ -5,6 +5,7 @@ excerpt: This post is about cats
 date: 2018-10-23
 categories: development
 tags: vue javascript
+published: false
 ---
 
 ## vue-native-cli

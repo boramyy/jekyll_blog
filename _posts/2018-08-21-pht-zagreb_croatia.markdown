@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: photo
 title: "zagreb, croatia"
 excerpt: 7일간의 크로아티아 - 플리트비체
 date: 2018-08-17
@@ -7,6 +7,7 @@ permalink: /photograph/croatia/zagreb
 categories: photograph
 tags: zagreb croatia
 img: zagreb_01.jpg
+published: false
 ---
 
 <div id="zagreb">

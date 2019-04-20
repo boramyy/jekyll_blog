@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<div class="post container {{ page.categories }}">
+  {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
+  {% if minutes == 0 %}
+    {% assign minutes = 1 %}
+  {% endif %}
+
+  <div class="post-header mb2">
+    <h2>{{ page.title }}</h2>
+    <span class="post-group">{{ page.group }} </span>/ 
+    {% for tag in page.tags %}
+      <span class="post-tag">{{ tag }}</span>
+    {% endfor %}
+    <a class="post-link" href="{{ page.golink }}" target="_blank">
+      <svg class="svg-icon icon-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+        <title>link</title>
+        <polyline points="27.5 12.23 27.5 0.5 15.77 0.5" />
+        <line x1="27.5" y1="0.5" x2="12.43" y2="15.57" />
+        <polyline points="12.69 4.53 0.5 4.53 0.5 27.5 23.47 27.5 23.47 15.31" />
+      </svg>
+      {{ page.golink }}
+    </a>
+    <span class="post-date">
+      <svg class="svg-icon icon-calendar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.88 26.5">
+        <title>calendar</title>
+        <rect x="0.5" y="3.54" width="27.88" height="22.46" />
+        <line x1="28.38" y1="10.98" x2="0.5" y2="10.98" />
+        <line x1="7.02" x2="7.02" y2="7.13" />
+        <line x1="21.86" x2="21.86" y2="7.13" />
+      </svg>
+      {{ page.date | date: "%Y %m" }}
+    </span>
+  </div>
+
+  <article class="post-content">
+    {{ content }}
+
+    {% assign allProjects = site.categories.projects %}
+    {% for post in allProjects %}
+      {% assign nowIndex = forloop.index0 %}
+      {% if post.url == page.url %}
+      {% assign prevIndex = nowIndex | minus: 1 %}
+      {% assign nextIndex = nowIndex | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="another-post-box">
+      {% if prevIndex >= 0 %}
+        <a class="another-post prev" href="{{ allProjects[prevIndex].url }}">
+          <svg x="0px" y="0px" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+          </svg>
+          {{ allProjects[prevIndex].title }}
+        </a>
+      {% endif %}
+      {% if nextIndex < allProjects.size %}
+        <a class="another-post next" href="{{ allProjects[nextIndex].url }}">
+          {{ allProjects[nextIndex].title }}
+          <svg x="0px" y="0px" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </article>
+
+  {% if txtpen.txtpen_sitename %}
+    <script src="https://txtpen.com/embed.js?site={{txtpen.txtpen_sitename}}" />
+  {% endif %}
+
+  {% if site.show_related_posts %}
+    <h3 class="related-post-title">{{ site.text.post.related_posts }}</h3>
+    {% for post in site.related_posts %}
+      <div class="post ml2">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+          <h4 class="post-title">{{ post.title }}</h4>
+          <p class="post-summary">{{ post.summary }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+</div>

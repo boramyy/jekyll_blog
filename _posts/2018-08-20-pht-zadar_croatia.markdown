@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: photo
 title: "zadar, croatia"
 excerpt: 7일간의 크로아티아 - 자다르
 date: 2018-08-16
@@ -7,6 +7,7 @@ permalink: /photograph/croatia/zadar
 categories: photograph
 tags: zadar croatia
 img: zadar_01.jpg
+published: false
 ---
 
 <div id="zadar">

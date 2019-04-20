@@ -24,6 +24,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://boramyy.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: boramyy
 
+pagination:
+  enabled: true
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
 
 # Build settings
 markdown: kramdown
@@ -32,20 +37,24 @@ highlighter: rouge
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate-v2
 
 
 # Style  
 sass:
   style: compressed
 
+gems:
+  - jekyll-paginate-v2
+
 # excerpt_separator: <!--more-->
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
+exclude:
+  - Gemfile
+  - Gemfile.lock
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/

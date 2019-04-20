@@ -10,18 +10,12 @@ layout: default
 
   <div class="post-header mb2">
     <h2>{{ page.title }} </h2>
-    <div class="post-header-right">
-      <div class="post-tags">
-        {% for tag in page.tags %}
-        <span class="post-tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      <span class="post-meta">{{ page.date | date: "%Y %m %d" }}</span>
-    </div>
-    <!-- {% if page.update_date %}
-      <br>
-      <span class="post-meta">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span><br>
-    {% endif %} -->
+    <!-- <div class="post-tags">
+      {% for tag in page.tags %}
+      <span class="post-tag">{{ tag }}</span>
+      {% endfor %}
+    </div> -->
+    <span class="post-meta">{{ page.date | date: "%Y %m" }}</span>
   </div>
 
   <article class="post-content">

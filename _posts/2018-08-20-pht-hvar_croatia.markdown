@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: photo
 title: "hvar, croatia"
 excerpt: 7일간의 크로아티아 - 흐바르
 date: 2018-08-14
@@ -7,6 +7,7 @@ permalink: /photograph/croatia/hvar
 categories: photograph
 tags: hvar croatia
 img: hvar_01.jpg
+published: false
 ---
 
 <div id="hvar">

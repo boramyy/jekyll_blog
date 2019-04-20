@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: photo
 title: "split, croatia"
 excerpt: 7일간의 크로아티아 - 스플리트
 date: 2018-08-15
@@ -7,6 +7,7 @@ permalink: /photograph/croatia/split
 categories: photograph
 tags: split croatia
 img: split_01.jpg
+published: false
 ---
 
 <div id="split">

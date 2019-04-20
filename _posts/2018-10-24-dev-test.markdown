@@ -5,6 +5,7 @@ excerpt: 테스트스트 테스트테스트 테스트테스트 테스트테스�
 date: 2018-10-24
 categories: development
 tags: react javascript github gh-pages 테스트
+published: false
 ---
 
 ### 테스트 합시다!
@@ -12,22 +13,22 @@ tags: react javascript github gh-pages 테스트
 ``` html
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Demo</title>
-        <meta name="description" content="Demo">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Demo</title>
+      <meta name="description" content="Demo">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+      <link rel="apple-touch-icon" href="apple-touch-icon.png">
+      <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="/normalize.css">
-        <link rel="stylesheet" href="/main.css">
-    </head>
-    <body>
-      <h1 class="title">안녕?</h1>
-    </body>
+      <link rel="stylesheet" href="/normalize.css">
+      <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <h1 class="title">안녕?</h1>
+  </body>
 ```
 
 ``` css

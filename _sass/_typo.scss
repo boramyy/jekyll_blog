@@ -33,49 +33,31 @@ h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    width: 65%;
+    width: 70%;
     margin-bottom:15px;
-    font-size:2em;
-    font-weight:100;
-    line-height:1.5;
-}
-
-h2:before {
-  // content: '';
-  // display: block;
-  // width: 60px;
-  // background: #e696ff;
-  // height: 20px;
-  // margin: 0 0 -15px -15px;
-      //  content: '';
-      // display: block;
-      // width: 495px;
-      // background: #e696ff;
-      // height: 14px;
-      // margin: 0px 0 -35px 35px;
+    font-size:1.6em;
+    font-weight:normal;
+    color:#111;
+    line-height:1.8;
+    letter-spacing:-0.4px;
+    word-spacing:5px;
 }
 
 h3 {font-size:1.4em}
-
-// .post-tag {
-//   color:#111; background:#f3f3f3;
-//   &.javascript {color:#000;background:#fae000}
-//   &.vue {color:#fff;background:#4fc08d}
-//   &.react {color:#61dafb;background:#282c34}
-//   &.github {color:#7f8c8d;background:#f6f6f6}
-// }
 
 .post {
   font-family: 'Noto Sans KR', san-serif;
   font-size: 18px;
   color:$baseColor;
-  line-height: 1.8;
+  line-height: 2;
   .post-header {
     .post-meta {
-      color: #999;
+      font-size: 15px;
+      font-weight: 100;
     }
   }
   p {
+    font-family: 'Nanum Gothic', san-serif;
     code {
       margin: 0 5px;
       padding: 1px 6px;
@@ -84,9 +66,12 @@ h3 {font-size:1.4em}
       height: 28px;
       padding-left: 0;
       vertical-align: text-bottom;
-      border-bottom: 12px solid #f7e0ff;
+      border-bottom: 12px solid #fff5e2;
       // border-bottom: 12px solid #f7e0ff;
     }
-
   }
+  h3 {font-size:1.5em;}
+  h4 {font-size:1.2em;margin-top:60px;margin-bottom:15px;}
+  h5 {font-size:1.1em;margin-top:45px;margin-bottom:15px;}
+  h6 {font-size:1em;margin-top:30px;margin-bottom:15px;}
 }
