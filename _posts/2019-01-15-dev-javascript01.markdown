@@ -5,7 +5,6 @@ permalink: /dev/javascript/web/01
 date: 2019-01-15
 categories: development
 tags: ["javascript", "node", "gulp"]
-published: true
 ---
 
 ### index
