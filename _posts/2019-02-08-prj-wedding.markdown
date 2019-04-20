@@ -4,7 +4,7 @@ title: "dunocanna"
 excerpt: 모바일 청첩장
 date: 2019-02-08
 permalink: /prj/dunocanna
-golink: http://www.dunocanna.site/
+golink: https://boramyy.github.io/dunocanna/
 img: dunocanna_thumb.jpg
 categories: projects
 group: ['mobile web']
