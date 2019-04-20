@@ -1,0 +1,12 @@
+- name: Tripbtoz Inc.
+  position: Front-End
+  term: 2017.11 - 2018.07
+  desc: 호텔 직계약 시스템 개발<br/>
+        메인서비스 개발 및 유지보수<br/>
+  env: [Node, Vue, React, Redux, MySQL, Handlebars, AntDesign, jQuery]
+  
+- name: BREEZE Communication
+  position: Front-End
+  term: 2015 - 2016
+  desc: 명함 제작 사이트 UI 개발
+  env: [HTML, CSS, JavaScript, jQuery, Materialize]

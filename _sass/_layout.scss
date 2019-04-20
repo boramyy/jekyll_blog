@@ -1,0 +1,75 @@
+
+.content_box {
+  position: relative;
+}
+#dubrovnik {
+  img {display:block;}
+  .content_01 {width:67%;margin-left:33%;}
+  .content_02 {float:left;width:40%;margin-top:-25%;margin-right:30px;margin-left:-9%;}
+  .content_03 {float:right;width:38%;margin-top:20%;margin-right:30px;margin-bottom:200px;margin-left:-20%;}
+  .content_04 {float:right;width:48%;margin-top:15%;margin-right:80px;}
+  .content_06 {width:110%;margin-top:15%;margin-bottom:15%;margin-left:-100px;}
+  .content_07 {width:40%;margin:0 auto;}
+}
+
+// #hvar {
+//   .content_01 {display:block;width:800px;margin-left:180px}
+//   .content_box_01 {
+//     height:636px;margin-bottom:30px;
+//     .content_02 {position:absolute;top:-200px;left:-250px;width:300px}
+//     .content_03 {position:absolute;top:30px;left:80px;width:900px}
+//   }
+//   .content_box_02 { 
+//     height:525px;margin-bottom:30px;
+//     .content_04 {position:absolute;left:-250px;width:700px}
+//   }
+//   .content_box_03 {height:525px;margin-bottom:30px}
+//   .content_05 {position:absolute;right:0;width:700px}
+//   .content_box_04 {
+//     .content_06 {position:absolute;right:0;width:1200px;height:650px;margin-bottom:70px;background-image:url('/assets/img/hvar_05.jpg');@extend %imgInBg;}
+//   }
+// }
+
+// #split {
+//   .content_01 {display:block;width:700px;margin-top:-95px;margin-bottom:30px;margin-left:380px}
+//   .content_box_01 {
+//     height:600px;margin-bottom:150px;
+//     .content_02 {position:absolute;left:-300px;height:600px}
+//   }
+//   .content_box_02 {
+//     height:600px;margin-bottom:150px;
+//     .content_03 {position:absolute;left:-270px;width:800px}
+//     .content_04 {position:absolute;bottom:0;left:560px;width:500px;height:375px;background-image:url('/assets/img/split_04.jpg');background-size:cover;background-position:top center;background-repeat:no-repeat;
+//       &:hover {background-position:bottom center}
+//     }
+//   }
+//   .content_box_03 {
+//     height:1010px;margin-bottom:100px;padding-top:120px;padding-left:360px;
+//     .content_05 {position:absolute;top:0;left:-270px;width:600px}
+//     .content_06 {display:block;width:500px}
+//     .content_07 {display:block;width:700px;margin-top:30px}
+//   }
+// }
+
+// #zadar {
+//   .content_box_01 {
+//     height:385px;margin-bottom:30px;
+//     .content_01 {position:absolute;top:0;left:287px;height:480px;margin-top:-95px}
+//   } 
+//   .content_box_02 {
+//     height:720px;margin-left:-250px;
+//     .content_02 {position:absolute;top:0;left:0;width:700px}
+//     .content_03 {position:absolute;top:0;left:730px;width:406px;height:720px}
+//   }
+//   .content_box_03 {
+//     height:525px;margin-bottom:30px;
+//     .content_04 {position:absolute;left:-220px;height:525px}
+//   }
+//   .content_05 {display:block;width:500px;margin-bottom:30px;margin-left:-20px}
+//   .content_06 {width:920px;margin-bottom:70px;margin-left:140px}
+// }
+
+
+// #plitvice {
+
+// }

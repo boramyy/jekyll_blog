@@ -1,0 +1,64 @@
+/*
+ * color
+ */
+
+// $logoColor: #111111;
+$purple: #995ff5;
+$purpleDark: darken($purple, 10%);
+$purpleLight: lighten($purple, 20%);
+$baseColor: #444;
+$baseActiveColor: lighten($baseColor, 20%);
+$subColor: #666666;
+
+$maxWidth: 1200px;
+
+
+/*
+ * figure 
+ */
+
+$sideVarWidth: 250px;
+
+
+/*
+ * styles 
+ */
+
+%hide {display:block;width:0;height:0;line-height:0;visibility:hidden}
+%left {display:block;float:left}
+%right {display:block;float:right}
+
+%clearFloat {
+  &:after {content:'';display:block;clear:both;width:0;height:0}
+}
+
+%imgInBg {background-size:cover;background-position:center center;background-repeat:no-repeat}
+%skillInBg {background-position:center left;background-repeat:no-repeat}
+
+
+/*
+ * function 
+ */
+
+@mixin media($queryString){
+  @media (#{$queryString}) {
+    @content;
+  }
+}
+
+@mixin boxRatio($width, $height) {
+  position: relative;
+  &:before{
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
