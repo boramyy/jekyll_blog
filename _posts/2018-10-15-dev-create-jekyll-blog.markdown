@@ -1,17 +1,17 @@
 ---
 layout: post
 title: "Jekyll로 github 블로그 만들기!"
-excerpt: This post is about cats
 date: 2018-10-01
-permalink: /dev/jekyll/01
+permalink: /dev/javascript/test/05
 categories: development
-tags: Jekyll sass
-published: false
+tags: ['Jekyll', 'sass']
+published: true
 ---
 
 
 
 ### Theme and colour
+
 code hilighter 테마 사용하는 법 참고 <br/><br/>
 
 ``` javascript

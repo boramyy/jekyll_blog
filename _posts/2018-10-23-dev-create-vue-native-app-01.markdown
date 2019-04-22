@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Vue-Native로 Todo앱 만들기"
-excerpt: This post is about cats
 date: 2018-10-23
+permalink: /dev/javascript/test/03
 categories: development
-tags: vue javascript
+tags: ['vue', 'javascript']
 published: false
 ---
 

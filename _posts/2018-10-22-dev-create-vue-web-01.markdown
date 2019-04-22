@@ -1,11 +1,10 @@
 ---
 layout: post
 title: "Vue로 Todo페이지 만들기"
-excerpt: Vue를 사용하여 todo 페이지를 작성해 봅시다.
 date: 2018-10-22
 permalink: /dev/javascript/vue/01
 categories: development
-tags: vue javascript
+tags: ['vue', 'javascript']
 published: false
 ---
 

@@ -1,0 +1,19 @@
+---
+layout: page
+title: pho
+permalink: /pho/
+categories: photograph
+tags: photograph
+---
+
+<ul class="photo-list">
+  {% for post in site.categories.photograph %}
+  <li class="photo-list-item">
+    <a href="{{ post.url }}">
+      <img class="photo-thumb" src="/assets/img/{{ post.img }}">
+      <span class="photo-title">{{ post.title }}</span>
+      <span class="photo-date">{{ post.date | date: "%Y %m" }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

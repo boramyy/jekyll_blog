@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Vue로 만든 Todo페이지 gh-pages에 배포하기"
-excerpt: This post is about cats
 date: 2018-10-24
+permalink: /dev/javascript/test/04
 categories: development
-tags: vue javascript github gh-pages
+tags: ['vue', 'javascript', 'github', 'gh-pages']
 published: false
 ---
 

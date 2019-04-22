@@ -7,7 +7,7 @@
 @import "layout";
 @import "typo";
 
-html {max-width:100%;overflow-x:hidden;scroll-behavior:smooth;}
+html {height:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth;}
 
 .container {
   width:100%;max-width:100%;margin:0 auto;padding:0 100px;
@@ -16,7 +16,6 @@ html {max-width:100%;overflow-x:hidden;scroll-behavior:smooth;}
   }
 }
 
-html {height:100%}
 header {
   overflow:hidden;width:100%;max-width:$maxWidth;margin:0 auto;z-index:999;
   &.container {padding-top:60px;}

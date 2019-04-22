@@ -28,8 +28,6 @@ github_username: boramyy
 #   sort_field: 'date'
 #   sort_reverse: true
 
-paginate: 5
-
 # Build settings
 markdown: kramdown
 encoding: utf-8
@@ -40,13 +38,9 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
 
-
 # Style  
 sass:
   style: compressed
-
-gems:
-  - jekyll-paginate
 
 # excerpt_separator: <!--more-->
 
