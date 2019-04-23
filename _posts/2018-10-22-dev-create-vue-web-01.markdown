@@ -5,7 +5,7 @@ date: 2018-10-22
 permalink: /dev/javascript/vue/01
 categories: development
 tags: ['vue', 'javascript']
-published: false
+published: true
 ---
 
 ### Vue 란?
