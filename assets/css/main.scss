@@ -209,7 +209,7 @@ header {
     .post-content {
       .page-title {width:100%;margin-top:0;margin-bottom:50px;}
       .post-list {
-        width:100%;
+        width:100%;min-height:330px;
         .post-list-item {
           margin-bottom: 15px;border-left:1px solid #111;
           &:after {content:none}
@@ -243,6 +243,28 @@ header {
           .photo-thumb {opacity:0.05;}
           .photo-title {opacity:1;}
           .photo-date {opacity:1;}
+        }
+      }
+    }
+  }
+
+  // for mobile
+  @include media("max-width: 414px"){
+    padding-right:15px;padding-left:0;
+    .photo-list {
+      min-height:500px;
+      .photo-list-item {
+        margin-bottom:100px;height:auto;
+        a {
+          height:auto;
+          .photo-thumb {width:95%;height:auto;-webkit-mask-image:-webkit-gradient(linear, 30% 20%, 70% 80%, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.1)));mask-image:linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.1));-webkit-transition:-webkit-mask-image 300ms, mask-image 300ms;transition:-webkit-mask-image 300ms, mask-image 300ms;}
+          .photo-title {top:auto;right:0;bottom:22%;width:60%;font-size:35px;letter-spacing:0;opacity:1;text-align:right;}
+          .photo-date {bottom:10%;right:2%;font-size:15px;opacity:0.9;}
+          &:hover {
+            .photo-thumb {opacity:1;-webkit-mask-image:none;mask-image:none;}
+            .photo-title {opacity:0;}
+            .photo-date {opacity:0;}
+          }
         }
       }
     }
@@ -285,10 +307,9 @@ header {
           height:35%;padding:15% 10%;
           &:nth-child(1) {margin-top:32%;}
           a {
-            .project-thumb {top:14%;right:-12%;width:100%;-webkit-transform:none;transform:none;}
+            .project-thumb {top:16%;right:-12%;width:100%;-webkit-transform:none;transform:none;}
             .project-text {
               top:0;left:0;-webkit-transform:none;transform:none;
-              .project-title {}
               .project-group {font-size:16px;}
             }
             &:hover {
