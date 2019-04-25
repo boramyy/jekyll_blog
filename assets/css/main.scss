@@ -124,6 +124,7 @@ header {
       }
       .group-content {padding-top:15px;padding-bottom:15px;}
       &:nth-child(1) {
+        margin-top:50px;
         .main-visual {top:104%;right:0;height:94%;}
       }
       &:nth-child(2) {margin-top:80%;padding-right:5%;padding-left:10%;}
@@ -354,10 +355,10 @@ header {
     }
     // for mobile
     @include media("max-width: 414px"){
-      padding-right:35px;padding-left:35px;
+      padding-top:100px;padding-right:35px;padding-left:35px;
       .post-header {
         margin-top:0;margin-bottom:0;
-        h2 {float:none;width:100%;margin-right:0;}
+        h2 {float:none;width:100%;margin-right:0;font-size:24px;}
         .post-header-right {
           float:none;width:100%;font-size:18px;
           .post-tags {
@@ -366,6 +367,11 @@ header {
           }
           .post-meta {font-size:18px;}
         }
+      }
+      .post-content {
+        h3 {font-size:20px;}
+        h4 {font-size:18px;}
+        h5 {font-size:16px;}
       }
     }
   }
@@ -477,29 +483,32 @@ header {
           }
           &.prj01 {
             .content-box-1 {
-              margin-right:0;margin-left:-35px;padding:50px 8%;
+              margin-right:0;margin-left:-35px;padding:55px 12%;
               .text-box-1 {
                 width:100%;
                 .title {}
                 .text {}
               }
-              .mockup-box-1 {margin-top:0;margin-left:0;}
+              .mockup-box-1 {margin-top:50px;margin-left:0;}
             }
             .content-box-2 {
-              display:block;
+              display:block;padding:70px 0;
               .screenshot {display:block;float:none;width:90%;margin:0 auto 50px;-webkit-box-shadow:0 20px 35px rgba(0,0,0,0.2);box-shadow:0 20px 35px rgba(0,0,0,0.2);}
             }
           }
           &.prj02 {
             .content-box-1 {
+              width:100%;padding:300px 8% 50px;
               .text-box-1 {
+                width:auto;
                 .title {}
                 .text {}
               }
-              .main-img {}
+              .main-img {top:30px;left:8%;width:100%;margin-right:-100px;}
             }
             .content-box-2 {
-              .screenshot {}
+              display:block;padding:50px 0;
+              .screenshot {float:none;width:100%;margin:10px auto;-webkit-box-shadow:0 20px 35px rgba(0,0,0,0.2);box-shadow:0 20px 35px rgba(0,0,0,0.2)}
             }
           }
         }
@@ -537,6 +546,9 @@ header {
 
   &.photograph {
     @include media("max-width:414px"){
+      .post-header {
+        h2 {font-weight:bold;}
+      }
       .post-content {
         img {width:100%;margin-top:40px;}
       }
