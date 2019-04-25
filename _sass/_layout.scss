@@ -2,14 +2,18 @@
 .content_box {
   position: relative;
 }
+
 #dubrovnik {
+  // for mobile
   img {display:block;}
-  .content_01 {width:67%;margin-left:33%;}
-  .content_02 {float:left;width:40%;margin-top:-25%;margin-right:30px;margin-left:-9%;}
-  .content_03 {float:right;width:38%;margin-top:20%;margin-right:30px;margin-bottom:200px;margin-left:-20%;}
-  .content_04 {float:right;width:48%;margin-top:15%;margin-right:80px;}
-  .content_06 {width:110%;margin-top:15%;margin-bottom:15%;margin-left:-100px;}
-  .content_07 {width:40%;margin:0 auto;}
+  @include media("min-width:414px"){
+    .content_01 {width:67%;margin-left:33%;}
+    .content_02 {float:left;width:40%;margin-top:-25%;margin-right:30px;margin-left:-9%;}
+    .content_03 {float:right;width:38%;margin-top:20%;margin-right:30px;margin-bottom:200px;margin-left:-20%;}
+    .content_04 {float:right;width:48%;margin-top:15%;margin-right:80px;}
+    .content_06 {width:110%;margin-top:15%;margin-bottom:15%;margin-left:-100px;}
+    .content_07 {width:40%;margin:0 auto;}
+  }
 }
 
 // #hvar {
